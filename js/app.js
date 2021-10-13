@@ -13,18 +13,32 @@ listOfNavbar.appendChild(sectionThree);
 listOfNavbar.appendChild(sectionFour);
 const links = document.querySelectorAll(" li .menu__link");
 const button = document.getElementById('btn');
+
 links.forEach((blockNav)=>{
+ 
+   
+  
     blockNav.addEventListener("click", ()=>{
-        
+        var sections = document.getElementsByTagName('section')
+        console.log(sections)
+       for(var i = 0; i < sections.length ; i++){
+           var el = sections[i]
+          el.classList.remove('your-active-class')
+           console.log(el)
+       }
         
 
         let item = document.getElementById(blockNav.getAttribute("data-nav"));
+       
+        
         let dimenion = item.getBoundingClientRect()
-        console.log(item)
-        console.log(dimenion)
+    
+        
         item.scrollIntoView({ behavior:'smooth',block:"start"
             
         })
+         item.classList.add("your-active-class");
+       
        
     }
      )
