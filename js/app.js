@@ -20,7 +20,7 @@ links.forEach((blockNav)=>{
   
     blockNav.addEventListener("click", ()=>{
         var sections = document.getElementsByTagName('section')
-        console.log(sections)
+        // remove active class 
        for(var i = 0; i < sections.length ; i++){
            var el = sections[i]
           el.classList.remove('your-active-class')
@@ -37,6 +37,7 @@ links.forEach((blockNav)=>{
         item.scrollIntoView({ behavior:'smooth',block:"start"
             
         })
+        // add active class
          item.classList.add("your-active-class");
        
        
