@@ -1,8 +1,8 @@
-var listOfNavbar = document.getElementById('navbar__list');
-var sectionOne = document.createElement('li')
-var sectionTwo = document.createElement('li');
-var sectionThree = document.createElement('li');
-var sectionFour = document.createElement('li');
+let listOfNavbar = document.getElementById('navbar__list');
+let sectionOne = document.createElement('li')
+let sectionTwo = document.createElement('li');
+let sectionThree = document.createElement('li');
+let sectionFour = document.createElement('li');
 sectionOne.innerHTML='<a  data-nav="section1" class="menu__link ">Section1</a>';
 sectionTwo.innerHTML='<a  data-nav="section2" class="menu__link ">Section2</a>';
 sectionThree.innerHTML='<a  data-nav="section3" class="menu__link ">Section3</a>';
@@ -19,12 +19,15 @@ links.forEach((blockNav)=>{
    
   
     blockNav.addEventListener("click", ()=>{
-        var sections = document.getElementsByTagName('section')
+        let sections = document.getElementsByTagName('section')
+        console.log(blockNav)
+        //remove active class from nav 
+       
         // remove active class 
-       for(var i = 0; i < sections.length ; i++){
-           var el = sections[i]
+       for(let i = 0; i < sections.length ; i++){
+           let el = sections[i]
           el.classList.remove('your-active-class')
-           console.log(el)
+          
        }
         
 
@@ -39,6 +42,8 @@ links.forEach((blockNav)=>{
         })
         // add active class
          item.classList.add("your-active-class");
+        blockNav.classList.add('your-active-class')
+
        
        
     }
