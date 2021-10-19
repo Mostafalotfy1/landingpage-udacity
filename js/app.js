@@ -16,13 +16,22 @@ const button = document.getElementById('btn');
 
 links.forEach((blockNav)=>{
  
+    // links.classList.remove('your-active-class')
+  
    
   
     blockNav.addEventListener("click", ()=>{
         let sections = document.getElementsByTagName('section')
-        console.log(blockNav)
+        const linksItems = document.querySelectorAll(" li .menu__link");
+
         //remove active class from nav 
-       
+        for(let j = 0; j < linksItems.length ; j++){
+            let link = linksItems[j]
+            link.classList.remove('your-active-class')
+           
+        }
+        console.log(linksItems)
+        console.log(blockNav)
         // remove active class 
        for(let i = 0; i < sections.length ; i++){
            let el = sections[i]
