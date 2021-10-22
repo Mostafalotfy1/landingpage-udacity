@@ -13,6 +13,22 @@ listOfNavbar.appendChild(sectionThree);
 listOfNavbar.appendChild(sectionFour);
 const links = document.querySelectorAll(" li .menu__link");
 const button = document.getElementById('btn');
+window.onscroll = function() {
+	document.querySelectorAll("section").forEach(function(Sectionscroll) {
+        console.log(Sectionscroll)
+    let activeLink = listOfNavbar.querySelector(`[data-nav=${Sectionscroll.id}]`);
+	if(Sectionscroll.getBoundingClientRect().top >= -400 && Sectionscroll.getBoundingClientRect().top <= 150){
+
+        Sectionscroll.classList.add("your-active-class");
+    activeLink.classList.add("active-link");
+
+    }
+    else{
+        Sectionscroll.classList.remove("your-active-class");
+         activeLink.classList.remove("active-link");
+    }
+	});
+}
 
 links.forEach((blockNav)=>{
  
